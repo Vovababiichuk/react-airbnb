@@ -1,0 +1,12 @@
+.attractions__list {
+   display: grid;
+   gap: 24px;
+}
+
+.attractions__link {
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1;
+   color: #000;
+}

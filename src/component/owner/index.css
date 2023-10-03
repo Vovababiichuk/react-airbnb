@@ -1,0 +1,44 @@
+.owner__photo {
+   width: 80px;
+   height: 80px;
+   border-radius: 80px;
+   object-fit: cover;
+   margin: 0 20px 28px 0
+}
+
+.owner__text {
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1.25;
+}
+
+.owner__sub-block {
+   display: flex;
+   gap: 16px;
+}
+
+.owner__sub-value {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+}
+
+.owner__sub-value:not(:last-child)::after {
+   content: '';
+   display: block;
+   height: 4px;
+   width: 4px;
+   border-radius: 4px;
+   background-color: #000;
+}
+
+.owner__block {
+   display: flex;
+}
+
+.owner__content {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}

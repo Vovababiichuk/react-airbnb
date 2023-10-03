@@ -1,0 +1,8 @@
+.heading--border {
+   display: block;
+}
+
+.details__list {
+   display: grid;
+   gap: 24px;
+}

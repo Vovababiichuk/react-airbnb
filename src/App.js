@@ -5,6 +5,12 @@ import Photo from "./component/photo";
 import Price from "./component/price";
 import RoomList from "./component/room-list";
 import Description from "./component/description";
+import Details from "./component/details";
+import Comfort from "./component/comfort";
+import Owner from "./component/owner";
+import Added from "./component/added";
+import Reviews from "./component/reviews";
+import Attractions from "./component/attractions";
 
 function App() {
   const data = {
@@ -100,8 +106,7 @@ function App() {
         "Public buses and taxis available within walking distance.",
       host_languages: ["English", "Spanish"],
       special_offers: "10% discount for bookings of 7 nights or more.",
-      "check-in_instructions":
-        "Check-in time is 3:00 PM. Please contact us in advance with your estimated arrival time.",
+      check_in_instructions: "Check-in time is 3:00 PM. Please contact us in advance with your estimated arrival time.",
     },
 
     guestReviews: [
@@ -179,7 +184,43 @@ function App() {
       />
       <RoomList list={data.roomTypes} />
       <Description title="Опис" children={data.description} />
+      <Details
+        guests={data.property_details.guests}
+        bedrooms={data.property_details.bedrooms}
+        bed={data.property_details.beds}
+        baths={data.property_details.baths}
+      />
       <Description title="Про сусідівя" children={data.neighborhood_info} />
+      <Comfort
+        pool={data.amenities.hasPool}
+        gym={data.amenities.hasGym}
+        breakfast={data.amenities.hasFreeBreakfast}
+        wifi={data.amenities.hasFreeWiFi}
+        parking={data.amenities.hasParking}
+        pets={data.amenities.hasPetsAllowed}
+        airport={data.amenities.hasAirportShuttle}
+        services={data.amenities.hasConciergeService}
+        room={data.amenities.hasRoomService}
+        child={data.amenities.hasChildFriendly}
+      />
+      <Owner
+        name={data.contact_info.name}
+        image={data.contact_info.image}
+        rate={data.contact_info.response_rate}
+        time={data.contact_info.response_time}
+        info={data.contact_info.info}
+        phone={data.contact_info.phone}
+      />
+      <Added
+        rules={data.additional_properties.house_rules}
+        policy={data.additional_properties.cancellation_policy}
+        local={data.additional_properties.local_transportation}
+        host={data.additional_properties.host_languages}
+        offers={data.additional_properties.special_offers}
+        instr={data.additional_properties.check_in_instructions}
+      />
+      <Reviews list={data.guestReviews} />
+      <Attractions list={data.nearbyAttractions} />
     </Page>
   );
 }
